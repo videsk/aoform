@@ -9,6 +9,7 @@ AOForm is completly compatible with Webkit, Gecko and IE9+.
 For start using add to <head>:
 
 ```javascript
+<link rel="stylesheet" type="text/css" href="aoform.min.css">
 <script src="https://example.com/js/aoform.min.js"></script>
 ``` 
 For create form need understand the simple JSON Schema. More types of form elements in [Wiki](https://github.com/spexnetworks/aoform/wiki/JSON-Schema).
@@ -80,6 +81,30 @@ var myForm = new AOForm(jsonForm, document.querySelector('body'));
 ```javascript
 myForm.data;
 ```
+
+## Custom CSS
+
+You can add your own CSS and setup easly. We add classes in `ClassesAO` object in the follow struct:
+
+```javascript
+const ClassesAO = {
+	metaElement: {
+		class: 'aoform'
+	},
+	container: {
+		class: 'aoform-container'
+	},
+	input: {
+		container: {
+			class: 'aoform-input-container'
+		},
+		text: {
+			class: 'aoform-input'
+		}
+	}...
+```
+
+Also you can replace the class of element with your own class. The HTML struct of elements can see in [Wiki](https://github.com/spexnetworks/aoform/wiki/CSS-Schema)
 
 ## Screenshot
 
