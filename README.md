@@ -8,7 +8,7 @@ In CSS we use Flexible Box Layout Module, making complete responsive form 😎. 
 
 ## Usage
 
-For start using add to <head>:
+For start using add to `<head>`:
 
 ```javascript
 <link rel="stylesheet" type="text/css" href="aoform.min.css">
