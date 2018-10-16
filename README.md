@@ -68,7 +68,7 @@ var jsonForm = [
 }];
 ```
 
-After create JSON Schema, for create new Form only need add one line:
+After JSON Schema, can create new Form with:
 
 ```javascript
 var myForm = new AOForm(jsonForm, document.querySelector('body'));
