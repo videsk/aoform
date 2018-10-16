@@ -4,6 +4,8 @@ Simple responsive Forms generator with JSON Schema, without dependencies (Pure J
 
 AOForm is completly compatible with Webkit, Gecko and IE9+.
 
+In CSS we use Flexible Box Layout Module, making complete responsive form 😎. [See compatibility here](https://caniuse.com/#feat=flexbox).
+
 ## Usage
 
 For start using add to <head>:
