@@ -23,12 +23,6 @@ var jsonForm = [
  "values": ""
 },
 {
- "type": "textarea",
- "name": "history",
- "label": "History of you",
- "values": "Default text like example"
-},
-{
  "type": "select",
  "name": "color",
  "label": "Favorite Color",
@@ -37,37 +31,8 @@ var jsonForm = [
 	{"label":"Yellow","value":"yellow"},
 	{"label":"Orange","value":"orange"}
  ]
-},
-{
- "type": "radio",
- "name": "contactmethod",
- "label": "Method for contact you",
- "values": [
-	{"label":"Email","value":"email"},
-	{"label":"Phone","value":"phone"},
-	{"label":"Videocall","value":"videocall"}
- ]
-},
-{
- "type": "checkbox",
- "name": "pet",
- "label": "Your Pets:",
- "values": [
-	{"label":"Dog","value":"dog"},
-	{"label":"Cat","value":"cat"},
-	{"label":"Turtle","value":"turtle"}
- ]
-},
-{
- "type": "multiselect",
- "name": "language",
- "label": "Select languages you speak",
- "values": [
-	{"label":"Spanish","value":"spanish"},
-	{"label":"English","value":"english"},
-	{"label":"Russian","value":"russian"}
- ]
-}];
+}
+];
 ```
 
 After JSON Schema, can create new Form with:
