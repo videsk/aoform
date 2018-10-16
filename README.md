@@ -84,7 +84,7 @@ myForm.data;
 
 ## Custom CSS
 
-You can add your own CSS and easly setup. We add classes in `ClassesAO` object in the follow struct:
+We add classes in `ClassesAO` object in the follow struct:
 
 ```javascript
 const ClassesAO = {
