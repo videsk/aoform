@@ -104,7 +104,7 @@ const ClassesAO = {
 	}...
 ```
 
-Also you can replace the class of element with your own class. The HTML struct of elements can see in [Wiki](https://github.com/spexnetworks/aoform/wiki/CSS-Schema)
+Also you can replace the class of element with your own class. The HTML struct of elements can see in [Wiki](https://github.com/spexnetworks/aoform/wiki/CSS-Schema).
 
 ## Screenshot
 
