@@ -9,7 +9,7 @@ AOForm is completly compatible with Webkit, Gecko and IE9+.
 For start using add to <head>:
 
 ```javascript
-<script src="https://example.com/js/aoform.js"></script>
+<script src="https://example.com/js/aoform.min.js"></script>
 ``` 
 For create form need understand the simple JSON Schema. More types of form elements in [Wiki](https://github.com/spexnetworks/aoform/wiki/JSON-Schema).
 
