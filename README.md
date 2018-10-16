@@ -40,6 +40,7 @@ After JSON Schema, can create new Form with:
 ```javascript
 var myForm = new AOForm(jsonForm, document.querySelector('body'));
 ```
+**AOForm function need Form and Element for append form.**
 
 ## Get Form Data
 
