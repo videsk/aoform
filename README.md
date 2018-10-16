@@ -1,7 +1,8 @@
 # AOForm JS Library
-Simple Forms generator with JSON Schema, without dependencies (Pure JS).
 
-![AOForm Example Screenshot](https://i.imgur.com/YHZzMx0.png)
+Simple responsive Forms generator with JSON Schema, without dependencies (Pure JS). We want to continue improving our open source library, so any changes or additions of new elements will be found in the documentation. 😃
+
+AOForm is completly compatible with Webkit, Gecko and IE9+.
 
 ## Usage
 
@@ -79,6 +80,12 @@ var myForm = new AOForm(jsonForm, document.querySelector('body'));
 ```javascript
 myForm.data;
 ```
+
+## Screenshot
+
+Normal             |  Responsive
+:-------------------------:|:-------------------------:
+![AOForm Example Screenshot](https://i.imgur.com/ia2s8ZD.png)  |  ![AOForm Example Screenshot](https://i.imgur.com/YHZzMx0.png)
 
 ## License
 
