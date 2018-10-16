@@ -1,6 +1,6 @@
 # AOForm JS Library
 
-Simple responsive Forms generator with JSON Schema, without dependencies (Pure JS) in 10Kb. We want to continue improving our open source library, so any changes or additions of new elements will be found in the documentation. 😃
+Simple responsive Forms generator with JSON Schema, without dependencies (Pure JS) in 10Kb. We want to continue improving our open source library, so any changes or additions of new elements will be found in the [documentation](https://github.com/spexnetworks/aoform/wiki). 😃
 
 AOForm is completly compatible with Webkit, Gecko and IE9+.
 
