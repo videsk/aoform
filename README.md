@@ -6,6 +6,8 @@ AOForm is completly compatible with Webkit, Gecko and IE9+.
 
 In CSS we use Flexible Box Layout Module, making complete responsive form 😎. [See compatibility here](https://caniuse.com/#feat=flexbox).
 
+[![DepShield Badge](https://depshield.sonatype.org/badges/spexnetworks/aoform/depshield.svg)](https://depshield.github.io)
+
 ## Usage
 
 For start using add to `<head>`:
@@ -83,4 +85,3 @@ Normal             |  Responsive
 ## License
 
 [Licensed under the MIT license](https://github.com/spexnetworks/aoform/blob/master/LICENSE).
-[![DepShield Badge](https://depshield.sonatype.org/badges/spexnetworks/aoform/depshield.svg)](https://depshield.github.io)
