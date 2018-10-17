@@ -83,3 +83,4 @@ Normal             |  Responsive
 ## License
 
 [Licensed under the MIT license](https://github.com/spexnetworks/aoform/blob/master/LICENSE).
+[![DepShield Badge](https://depshield.sonatype.org/badges/spexnetworks/aoform/depshield.svg)](https://depshield.github.io)
