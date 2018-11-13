@@ -228,6 +228,75 @@ function genereateElement(form, callback){
 						   AOFormData.push(JSON.parse(data));
 						   callback(tag);
 			break;
+		case 'searchselect': tag.setAttribute('class',ClassesAO.searchselect.container.class);
+						   tag.setAttribute('name',form.name);
+						   var selectext = document.createElement(ClassesAO.metaElement.class);
+						   selectext.setAttribute('class', ClassesAO.searchselect.text.container.class);
+						   selectext.setAttribute('data-id', id);
+						   var elSelector = "[data-id='"+id+"']";
+						   var addScript = 'document.querySelector("'+elSelector+'").onclick =  function(e){e.stopPropagation(); if(this.nextSibling.classList.contains(ClassesAO.activeClass)){this.nextSibling.classList.remove(ClassesAO.activeClass);}else{this.nextSibling.classList.add(ClassesAO.activeClass);}};';
+						   TempListener.push(addScript);
+						   var textContainerOptions = document.createElement(ClassesAO.metaElement.class);
+						   textContainerOptions.setAttribute("class", ClassesAO.searchselect.text.options.container.class);
+						   textContainerOptions.setAttribute('placeholder', form.label);
+						   var idContainerOptionSelected = guidGenerator();
+						   textContainerOptions.setAttribute("data-id", idContainerOptionSelected); 
+						   selectext.appendChild(textContainerOptions);
+						   var optionContainer = document.createElement(ClassesAO.metaElement.class);
+						   optionContainer.setAttribute('class', ClassesAO.searchselect.options.container.class);
+						   var options = form.values;
+						   var searchContainer = document.createElement(ClassesAO.metaElement.class);
+						   searchContainer.setAttribute('class', ClassesAO.searchselect.options.search.container.class);
+						   var searchTextarea = document.createElement(ClassesAO.metaElement.class);
+						   searchTextarea.setAttribute('class', ClassesAO.searchselect.options.search.textarea.class);
+						   searchTextarea.setAttribute('placeholder', ClassesAO.searchselect.options.search.textarea.placeholder);
+						   searchTextarea.setAttribute('contenteditable', '');
+						   var idsearchTextArea = guidGenerator();
+						   searchTextarea.setAttribute('id-option', idsearchTextArea);
+						   searchContainer.appendChild(searchTextarea);
+						   optionContainer.appendChild(searchContainer);
+						   for (var i = 0; i < options.length; i++){
+						   		var idOption = guidGenerator();
+						   		var optionElement = document.createElement(ClassesAO.metaElement.class);
+						   		optionElement.setAttribute('class',ClassesAO.searchselect.options.option.class);
+						   		optionElement.innerText = options[i].label;
+						   		optionElement.setAttribute('value',options[i].value);
+						   		optionElement.setAttribute('data-id',idOption);
+						   		var elSelectorOption = "[data-id='"+idOption+"']";
+						   		var addScript = `
+									document.querySelector("`+elSelectorOption+`").onclick = function(e) {
+										e.stopPropagation();
+										if (!this.classList.contains(ClassesAO.activeClass)) { 
+											this.classList.add(ClassesAO.activeClass);
+											var newOption = document.createElement(ClassesAO.metaElement.class);
+									        newOption.setAttribute("class", ClassesAO.searchselect.text.options.option.class);
+									        newOption.setAttribute("data-id-option", "`+idOption+`");
+									        newOption.innerText = this.innerText;
+									        addListenerOptionsMultiSelect();
+									        document.querySelector('[data-id="`+idContainerOptionSelected+`"]').appendChild(newOption);
+									        AOFormData[`+increment+`]["`+form.name+`"].push(this.getAttribute("value")); 
+									    } else {
+									    	this.classList.remove(ClassesAO.activeClass);
+									    	var id_option = '[data-id-option="'+this.getAttribute('data-id')+'"]';
+									    	function listenerOption(selector){
+												var selectOption = document.querySelector(id_option);
+											    selectOption.remove();
+									    	};
+									    	listenerOption();
+									    	AOFormData[`+increment+`]["`+form.name+`"].pop(this.getAttribute("value"));
+									    }
+									  	document.querySelector("`+elSelector+`").click(); 
+									};
+						   		`;
+						   		TempListener.push(addScript);
+						   		optionContainer.appendChild(optionElement);
+						   }
+						   tag.appendChild(selectext);
+						   tag.appendChild(optionContainer);
+						   var data = '{"'+form.name+'": []}';
+						   AOFormData.push(JSON.parse(data));
+						   callback(tag);
+			break;
 	}
 	increment++;
 };
@@ -322,13 +391,48 @@ const ClassesAO = {
 			}
 		}
 	},
+	searchselect: {
+		container: {
+			class: 'aoform-multiple-select'
+		},
+		text: {
+			container: {
+				class: 'aoform-text-select aoform-options-selected'
+			},
+			options: {
+				container: {
+					class: 'aoform-multiple-selected-option'
+				},
+				option: {
+					class: 'aoform-select-option'
+				}
+			}
+		},
+		options: {
+			container: {
+				class: 'aoform-option-select'
+			},
+			option: {
+				class: 'aoform-option'
+			},
+			search:{
+				container: {
+					class: 'aoform-container-search'
+				},
+				textarea: {
+					class: 'aoform-text-search',
+					placeholder: 'Type for search...'
+				}
+			}
+		}
+	},
 	title:{
 		class: 'aoform-title'
 	},
 	subtitle:{
 		class: 'aoform-subtitle'
 	},
-	activeClass: 'aoform-active'
+	activeClass: 'aoform-active',
 };
 
 const TempListener = [];

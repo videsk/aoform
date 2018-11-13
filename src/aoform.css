@@ -330,3 +330,28 @@ aoform.aoform-text-select.aoform-selected {
     height: auto;
     position: relative
 }
+
+.aoform-option-select .aoform-text-search {
+    width: 100%;
+    padding: 10px;
+    min-height: 37px;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    color: #525252;
+    outline: none;
+}
+
+.aoform-option-select .aoform-container-search {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 2px solid #dcdcdc;
+}
+
+.aoform-option-select .aoform-text-search:not(:empty)::before {
+    display: none;
+}
+
+.aoform-option-select .aoform-text-search:empty::before {
+    content: attr(placeholder);
+    color: #b5b4b4;
+}
